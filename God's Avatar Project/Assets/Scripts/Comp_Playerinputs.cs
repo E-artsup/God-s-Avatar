@@ -36,20 +36,31 @@ namespace GodAvatar
         public Input Attack;
         public Input Power;
 
+        private Quaternion _oldRotation;
+
+        private void Update()
+        {
+            _oldRotation = transform.rotation;
+
+        }
+
         public int MoveAxisForwardRaw
         {
             get
             {
                 if (Forward.Pressed() && Backward.Pressed())
                 {
+                    transform.rotation = _oldRotation;
                     return 0;
                 }
                 else if (Forward.Pressed())
                 {
+                    transform.rotation = new Quaternion(0, 0, 0, 0);
                     return 1;
                 }
                 else if (Backward.Pressed())
                 {
+                    transform.rotation = new Quaternion(0, 1, 0, 0);
                     return -1;
                 }
                 else
@@ -65,14 +76,17 @@ namespace GodAvatar
             {
                 if(Right.Pressed() && Left.Pressed())
                 {
+                    transform.rotation = _oldRotation;
                     return 0;
                 }
                 else if (Right.Pressed())
                 {
+                    transform.rotation = new Quaternion(0, 0.7f, 0, 0.7f);
                     return 1;
                 }
                 else if (Left.Pressed())
                 {
+                    transform.rotation = new Quaternion(0, 0.7f, 0, -0.7f);
                     return -1;
                 }
                 else

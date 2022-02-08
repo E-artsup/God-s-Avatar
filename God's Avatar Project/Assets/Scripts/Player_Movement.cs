@@ -29,12 +29,12 @@ namespace GodAvatar
             _newVelocity = _moveInputVector * _speed;
             transform.Translate(_newVelocity * Time.deltaTime, Space.World);
 
-
             if (_inputs.Attack.PressedDown())
             {
-                //Debug.Log("Attack !");
 
-                Collider[] _colliders = Physics.OverlapBox(_hitBox.position, new Vector3(2f,0.5f,0.5f)); // Check if a Collider entered th hitbox Zone
+                Collider[] _colliders = Physics.OverlapBox(_hitBox.position, new Vector3(1f,0.5f,1f)); // Check if a Collider entered th hitbox Zone
+
+
 
                 if (_colliders != null)
                 {
@@ -48,8 +48,11 @@ namespace GodAvatar
 
         }
 
-
-        
+        //DEBUG ONLY
+        //private void OnDrawGizmos()
+        //{
+        //    Gizmos.DrawCube(_hitBox.position, new Vector3(1f, 0.5f, 1f));
+        //}
 
 
     }
