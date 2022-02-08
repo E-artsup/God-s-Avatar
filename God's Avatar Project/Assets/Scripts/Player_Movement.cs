@@ -9,6 +9,7 @@ namespace GodAvatar
     {
         [Range(1.0f,10.0f)]
         [SerializeField] private float _speed=1.0f;
+        [SerializeField] private Transform _hitBox;
 
         private Comp_Playerinputs _inputs;
         private Vector3 _newVelocity;
@@ -29,9 +30,28 @@ namespace GodAvatar
             transform.Translate(_newVelocity * Time.deltaTime, Space.World);
 
 
+            if (_inputs.Attack.PressedDown())
+            {
+                //Debug.Log("Attack !");
 
+                Collider[] _colliders = Physics.OverlapBox(_hitBox.position, new Vector3(2f,0.5f,0.5f)); // Check if a Collider entered th hitbox Zone
+
+                if (_colliders != null)
+                {
+                    foreach (Collider collider in _colliders)
+                    {
+                        Debug.Log(collider);                    //TODO Decrease Ennemy Health HERE
+                    }
+                }
+                
+            }
 
         }
+
+
+        
+
+
     }
 }
 
