@@ -13,6 +13,7 @@ namespace GodAvatar
 
         private Comp_Playerinputs _inputs;
         private Vector3 _newVelocity;
+        private int _comboCounter=0;
 
 
         // Start is called before the first frame update
@@ -33,8 +34,14 @@ namespace GodAvatar
             {
 
                 Collider[] _colliders = Physics.OverlapBox(_hitBox.position, new Vector3(1f,0.5f,1f)); // Check if a Collider entered th hitbox Zone
+                _comboCounter++;
 
+                if (_comboCounter >3)
+                {
+                    _comboCounter = 0;
+                }
 
+                //Debug.Log(_comboCounter);
 
                 if (_colliders != null)
                 {

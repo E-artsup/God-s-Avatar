@@ -41,6 +41,7 @@ namespace GodAvatar
         private void Update()
         {
             _oldRotation = transform.rotation;
+            //Debug.Log(transform.rotation);
 
         }
 
@@ -55,12 +56,35 @@ namespace GodAvatar
                 }
                 else if (Forward.Pressed())
                 {
-                    transform.rotation = new Quaternion(0, 0, 0, 0);
+                    if (Right.Pressed())
+                    {
+                        transform.rotation = new Quaternion(0, 0.4f, 0, 0.9f);
+                    }
+                    else if (Left.Pressed())
+                    {
+                        transform.rotation = new Quaternion(0, 0.4f, 0, -0.9f);
+                    }
+                    else
+                    {
+                        transform.rotation = new Quaternion(0, 0, 0, 0);
+                    }
+                    //transform.Rotate(0, 45, 0, Space.World);
                     return 1;
                 }
                 else if (Backward.Pressed())
                 {
-                    transform.rotation = new Quaternion(0, 1, 0, 0);
+                    if (Right.Pressed())
+                    {
+                        transform.rotation = new Quaternion(0, 0.9f, 0, 0.4f);
+                    }
+                    else if (Left.Pressed())
+                    {
+                        transform.rotation = new Quaternion(0, -0.9f, 0, 0.4f);
+                    }
+                    else
+                    {
+                        transform.rotation = new Quaternion(0, 1, 0, 0);
+                    }
                     return -1;
                 }
                 else
@@ -81,12 +105,34 @@ namespace GodAvatar
                 }
                 else if (Right.Pressed())
                 {
-                    transform.rotation = new Quaternion(0, 0.7f, 0, 0.7f);
+                    if (Forward.Pressed())
+                    {
+                        transform.rotation = new Quaternion(0, 0.4f, 0, 0.9f);
+                    }
+                    else if (Backward.Pressed())
+                    {
+                        transform.rotation = new Quaternion(0, 0.9f, 0, 0.4f);
+                    }
+                    else
+                    {
+                        transform.rotation = new Quaternion(0, 0.7f, 0, 0.7f);
+                    }
                     return 1;
                 }
                 else if (Left.Pressed())
                 {
-                    transform.rotation = new Quaternion(0, 0.7f, 0, -0.7f);
+                    if (Forward.Pressed())
+                    {
+                        transform.rotation = new Quaternion(0, 0.4f, 0, -0.9f);
+                    }
+                    else if (Backward.Pressed())
+                    {
+                        transform.rotation = new Quaternion(0, -0.9f, 0, 0.4f);
+                    }
+                    else
+                    {
+                        transform.rotation = new Quaternion(0, 0.7f, 0, -0.7f);
+                    }
                     return -1;
                 }
                 else
