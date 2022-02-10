@@ -5,33 +5,33 @@ using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] private int health; // Les points de vie actuel du Joueur
-    [SerializeField] private int numOfhearts; // Nombre de coeurs total du joueur
+    [SerializeField] private int _health; // Les points de vie actuel du Joueur
+    [SerializeField] private int _numOfhearts; // Nombre de coeurs total du joueur
 
     public Image[] hearts; // Toutes les coeurs
-    [SerializeField] private Sprite heartFull; // Sprite du coeur plein
-    [SerializeField] private Sprite heartEmpty; // Sprite du coeur vide
+    [SerializeField] private Sprite _heartFull; // Sprite du coeur plein
+    [SerializeField] private Sprite _heartEmpty; // Sprite du coeur vide
 
     // Update is called once per frame
     void Update()
     {
 
-        if (health > numOfhearts)
+        if (_health > _numOfhearts)
         {
-            health = numOfhearts;
+            _health = _numOfhearts;
         }
 
         for (int i = 0; i < hearts.Length; i++)
         {
 
-            if(i < health)
+            if(i < _health)
             {
-                hearts[i].sprite = heartFull;
+                hearts[i].sprite = _heartFull;
             } else {
-                hearts[i].sprite = heartEmpty;
+                hearts[i].sprite = _heartEmpty;
             }
 
-            if(i < numOfhearts)
+            if(i < _numOfhearts)
             {
                 hearts[i].enabled = true;
             } else {
