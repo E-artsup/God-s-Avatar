@@ -36,6 +36,8 @@ namespace GodAvatar
         public Input Attack;
         public Input Power;
 
+        [SerializeField] private Animator _animator;
+
         private Quaternion _oldRotation;
 
         private void Update()
@@ -52,6 +54,7 @@ namespace GodAvatar
                 if (Forward.Pressed() && Backward.Pressed())
                 {
                     transform.rotation = _oldRotation;
+                    _animator.SetBool("IsWalking", false);
                     return 0;
                 }
                 else if (Forward.Pressed())
@@ -69,6 +72,8 @@ namespace GodAvatar
                         transform.rotation = new Quaternion(0, 0, 0, 0);
                     }
                     //transform.Rotate(0, 45, 0, Space.World);
+                    _animator.SetBool("IsWalking", true);
+
                     return 1;
                 }
                 else if (Backward.Pressed())
@@ -85,10 +90,12 @@ namespace GodAvatar
                     {
                         transform.rotation = new Quaternion(0, 1, 0, 0);
                     }
+                    _animator.SetBool("IsWalking", true);
                     return -1;
                 }
                 else
                 {
+                    //Debug.Log("TEP");
                     return 0;
                 }
             }
@@ -101,6 +108,7 @@ namespace GodAvatar
                 if(Right.Pressed() && Left.Pressed())
                 {
                     transform.rotation = _oldRotation;
+                    _animator.SetBool("IsWalking", false);
                     return 0;
                 }
                 else if (Right.Pressed())
@@ -117,6 +125,9 @@ namespace GodAvatar
                     {
                         transform.rotation = new Quaternion(0, 0.7f, 0, 0.7f);
                     }
+                    //Debug.Log("Droite");
+
+                    _animator.SetBool("IsWalking", true);
                     return 1;
                 }
                 else if (Left.Pressed())
@@ -133,10 +144,14 @@ namespace GodAvatar
                     {
                         transform.rotation = new Quaternion(0, 0.7f, 0, -0.7f);
                     }
+                    //Debug.Log("Gauche");
+                    _animator.SetBool("IsWalking", true);
                     return -1;
                 }
                 else
                 {
+                    //Debug.Log("NOPE");
+                    _animator.SetBool("IsWalking", false);
                     return 0;
                 }
             }

@@ -56,10 +56,10 @@ namespace GodAvatar
         }
 
         //DEBUG ONLY
-        //private void OnDrawGizmos()
-        //{
-        //    Gizmos.DrawCube(_hitBox.position, new Vector3(1f, 0.5f, 1f));
-        //}
+        private void OnDrawGizmos()
+        {
+            Gizmos.DrawCube(_hitBox.position, new Vector3(1f, 0.5f, 1f));
+        }
 
 
     }
