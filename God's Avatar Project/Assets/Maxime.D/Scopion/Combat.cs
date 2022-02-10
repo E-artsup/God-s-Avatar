@@ -2,72 +2,78 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Combat : MonoBehaviour
+
+
+namespace GodAvatar
 {
-
-    public GameObject player;
-    public PointDeVie pdv;
-
-    public int hp = 10;
-    public int damage = -5;
-    public int poisonDamage = -5;
-    public float poisonDelay = 1.0f;
-    public float vitesseAttaque = 3.0f;
-
-    private bool cb;
-
-    private void Start()
+    public class Combat : MonoBehaviour
     {
-        cb = false;
-        player = GameObject.Find("Player");
-        pdv = player.GetComponent<PointDeVie>();
 
-        hp = 10;
-        damage = -5;
-        poisonDamage = -5;
-        poisonDelay = 1.0f;
-        vitesseAttaque = 3.0f;
-    }
+        public GameObject player;
+        public PointDeVie pdv;
 
-    //Mort
-    private void Update()
-    {
-        if (hp <= 0)
+        public int hp = 10;
+        public int damage = -5;
+        public int poisonDamage = -5;
+        public float poisonDelay = 1.0f;
+        public float vitesseAttaque = 3.0f;
+
+        private bool cb;
+
+        private void Start()
         {
-            Destroy(this.gameObject);
+            cb = false;
+            player = GameObject.Find("Player");
+            pdv = player.GetComponent<PointDeVie>();
+
+            hp = 10;
+            damage = -5;
+            poisonDamage = -5;
+            poisonDelay = 1.0f;
+            vitesseAttaque = 3.0f;
         }
-    }
 
-    //Attaque
-    private void OnTriggerEnter(Collider other)
-    {
-        if (player != null && pdv != null)
+        //Mort
+        private void Update()
         {
-            Debug.Log("le player existe");
-            if (other.gameObject == player)
+            if (hp <= 0)
             {
-                Debug.Log("le player est bien détecter");
-                cb = true;
-                StartCoroutine(AttaqueAuPoison());
+                Destroy(this.gameObject);
+            }
+        }
+
+        //Attaque
+        private void OnTriggerEnter(Collider other)
+        {
+            if (player != null && pdv != null)
+            {
+                Debug.Log("le player existe");
+                if (other.gameObject == player)
+                {
+                    Debug.Log("le player est bien détecter");
+                    cb = true;
+                    StartCoroutine(AttaqueAuPoison());
+                }
+            }
+        }
+
+        //N'attaque plus
+        private void OnTriggerExit(Collider other)
+        {
+            cb = false;
+            Debug.Log("N'attaque plus");
+        }
+
+        //lance l'attaque
+        IEnumerator AttaqueAuPoison()
+        {
+            while (cb)
+            {
+                Debug.Log("Attaque");
+                pdv.Poisoned(damage, poisonDamage, poisonDelay);
+                yield return new WaitForSeconds(vitesseAttaque);
             }
         }
     }
-
-    //N'attaque plus
-    private void OnTriggerExit(Collider other)
-    {
-        cb = false; 
-        Debug.Log("N'attaque plus");
-    }
-
-    //lance l'attaque
-    IEnumerator AttaqueAuPoison()
-    {
-        while (cb)
-        {
-            Debug.Log("Attaque");
-            pdv.Poisoned(damage, poisonDamage, poisonDelay);
-            yield return new WaitForSeconds(vitesseAttaque);
-        }
-    }
 }
+
