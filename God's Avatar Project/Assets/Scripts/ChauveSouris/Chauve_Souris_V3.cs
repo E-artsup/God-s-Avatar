@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+
+/*Pour fonctionnement du script:
+ * -Créer deux layers: Player et obstacle + les assigner sur la bonne case dans l'editor
+ */
+
 public class Chauve_Souris_V3 : MonoBehaviour
 {
     public NavMeshAgent navMeshAgent;
@@ -31,6 +36,7 @@ public class Chauve_Souris_V3 : MonoBehaviour
     bool m_PlayerNear;
     bool m_IsPatrol;
     bool m_CaughtPlayer;
+    bool moving;
 
     //En rapport avec le joueur:
 
@@ -40,7 +46,9 @@ public class Chauve_Souris_V3 : MonoBehaviour
     //Variable pour la chauve souris:
     public int ChauveSourisPDV;
 
-    // Start is called before the first frame update
+ 
+
+    
     void Start()
     {
 
@@ -51,16 +59,21 @@ public class Chauve_Souris_V3 : MonoBehaviour
         m_WaitTime = startWaitTime;
         m_TimeToRotate = timeToRotate;
 
+        navMeshAgent.SetDestination(RandomNavmeshLocation(15f));
+
         navMeshAgent = GetComponent<NavMeshAgent>();
 
         navMeshAgent.isStopped = false;
         navMeshAgent.speed = speedWalk;
-        navMeshAgent.SetDestination(RandomNavmeshLocation(15f));
+        
+        
     }
 
 
     void Update()
     {
+
+
         Debug.Log("Je regarde le monde");
         EnvironmentView();
 
@@ -81,11 +94,13 @@ public class Chauve_Souris_V3 : MonoBehaviour
         {
             Attacking();
         }
+
+        
     }
 
     private void Attacking()
     {
-        PlayerPDV = -damage;
+        PlayerPDV =- damage;
     }
 
     private void Patroling()
