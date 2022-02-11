@@ -10,7 +10,8 @@ namespace GodAvatar
     {
 
         public GameObject player;
-        public PointDeVie pdv;
+
+        private PointDeVie pdv;
 
         public int hp = 10;
         public int damage = -5;

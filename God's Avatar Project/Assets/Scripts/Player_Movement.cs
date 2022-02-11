@@ -19,6 +19,7 @@ namespace GodAvatar
         // Start is called before the first frame update
         void Start()
         {
+            Time.timeScale = 1f;
             _inputs = GetComponent<Comp_Playerinputs>();
         }
 
@@ -47,7 +48,11 @@ namespace GodAvatar
                 {
                     foreach (Collider collider in _colliders)
                     {
-                        Debug.Log(collider);                    //TODO Decrease Ennemy Health HERE
+                        Debug.Log(collider);                 //TODO Decrease Ennemy Health HERE
+                        if (collider.tag == "Ennemy")
+                        {
+                            collider.GetComponent<Dissolving_Controler>().PlayVFX();
+                        }
                     }
                 }
                 
@@ -56,10 +61,10 @@ namespace GodAvatar
         }
 
         //DEBUG ONLY
-        private void OnDrawGizmos()
-        {
-            Gizmos.DrawCube(_hitBox.position, new Vector3(1f, 0.5f, 1f));
-        }
+        //private void OnDrawGizmos()
+        //{
+        //    Gizmos.DrawCube(_hitBox.position, new Vector3(1f, 0.5f, 1f));
+        //}
 
 
     }

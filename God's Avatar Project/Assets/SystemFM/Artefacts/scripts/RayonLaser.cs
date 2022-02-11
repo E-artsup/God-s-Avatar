@@ -12,10 +12,10 @@ public class RayonLaser : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        XScale = this.gameObject.transform.parent.localScale.x * (float)0.5;
-        YScale = this.gameObject.transform.parent.localScale.x * (float)0.5;
+        XScale = 0.5f;
+        YScale = 0.5f;
         ZScale = this.gameObject.transform.localScale.z;
-        this.gameObject.transform.localScale = new Vector3(XScale, YScale, ZScale);
+        this.gameObject.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
         FrontScale = new Vector3(0, 0, 0.2f);
     }
 

@@ -507,7 +507,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c56ee01824e1c014592b4594f5978e30, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -574,7 +574,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1113144201
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -906,6 +906,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CubeAnkh
       objectReference: {fileID: 0}
+    - target: {fileID: 6487679223806044124, guid: eea52f84720f2c049a7053260219c344, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c56ee01824e1c014592b4594f5978e30, type: 2}
     - target: {fileID: 6487679223806044126, guid: eea52f84720f2c049a7053260219c344, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -962,6 +966,10 @@ PrefabInstance:
     - target: {fileID: 729799758436300306, guid: 96d6e08805e65074793cd46dbb3de573, type: 3}
       propertyPath: m_Name
       value: RayonLaser
+      objectReference: {fileID: 0}
+    - target: {fileID: 729799758436300306, guid: 96d6e08805e65074793cd46dbb3de573, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 926219631562742598, guid: 96d6e08805e65074793cd46dbb3de573, type: 3}
       propertyPath: m_RootOrder
@@ -1081,13 +1089,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 567954572208965104, guid: 47561073cd4662e489843d3222c32911, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 567954572208965105, guid: 47561073cd4662e489843d3222c32911, type: 3}
       propertyPath: m_Name
       value: Tempete
       objectReference: {fileID: 0}
     - target: {fileID: 567954572208965105, guid: 47561073cd4662e489843d3222c32911, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 567954572208965118, guid: 47561073cd4662e489843d3222c32911, type: 3}
       propertyPath: m_RootOrder
@@ -1160,15 +1172,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 741501793901437797, guid: 5df584e6021224c48929d676a2e121d3, type: 3}
       propertyPath: m_LocalScale.x
-      value: 40
+      value: 361.64398
       objectReference: {fileID: 0}
     - target: {fileID: 741501793901437797, guid: 5df584e6021224c48929d676a2e121d3, type: 3}
       propertyPath: m_LocalScale.y
-      value: 40
+      value: 361.64398
       objectReference: {fileID: 0}
     - target: {fileID: 741501793901437797, guid: 5df584e6021224c48929d676a2e121d3, type: 3}
       propertyPath: m_LocalScale.z
-      value: 40
+      value: 361.64398
       objectReference: {fileID: 0}
     - target: {fileID: 741501793901437797, guid: 5df584e6021224c48929d676a2e121d3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5961,7 +5973,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10308, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
   - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
