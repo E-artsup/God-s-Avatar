@@ -2,7 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+<<<<<<< HEAD
 using UnityEngine.SceneManagement;
+=======
+>>>>>>> d593fa0281c146abed6b92bbb24447e6d436d2d3
 
 namespace GodAvatar {
     public class PauseMenuScript : MonoBehaviour
@@ -25,12 +28,15 @@ namespace GodAvatar {
             _titleText.text = "Option";
         }
 
+<<<<<<< HEAD
         public void MainMenu()
         {
             SceneManager.LoadScene(0, LoadSceneMode.Single);
         }
 
 
+=======
+>>>>>>> d593fa0281c146abed6b92bbb24447e6d436d2d3
         public void QuitGame()
         {
             Application.Quit();
