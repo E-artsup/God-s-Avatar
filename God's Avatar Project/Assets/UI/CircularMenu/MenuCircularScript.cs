@@ -7,11 +7,9 @@ namespace GodAvatar
 {
     public class MenuCircularScript : MonoBehaviour
     {
-
         [SerializeField] Vector2 _normalizedMousePosition;
         [SerializeField] float _currentAngle;
         [SerializeField] int _selection;
-        [SerializeField] private UseRayon _beamScript;
 
         private int _previousSelection;
 
@@ -19,6 +17,9 @@ namespace GodAvatar
         private HoveringScript _previousMenuItemSc;
 
         [SerializeField] private GameObject[] _MenuItems;
+
+
+        
 
         // Update is called once per frame
         void Update()
@@ -43,15 +44,6 @@ namespace GodAvatar
 
         public int GetSelection()
         {
-            if (_selection == 1)
-            {
-                _beamScript._beamSelected = false;
-            }
-            else
-            {
-                _beamScript._beamSelected = true ;
-
-            }
             return _selection;
         }
     }

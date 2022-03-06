@@ -10,6 +10,7 @@ namespace GodAvatar {
         [SerializeField] private float _holdTimer;
         [SerializeField] private GameObject _CircularMenu;
         [SerializeField] private GameObject _ArtifactBox;
+        [SerializeField] private MagicCircle _magicRing;
         public float _timer;
         private bool _menuOpened;
 
@@ -31,6 +32,7 @@ namespace GodAvatar {
             {
                 CloseMenu();
                 _ArtifactBox.GetComponent<ArtefactBoxManager>().ChangeEquipedPower(_CircularMenu.GetComponent<MenuCircularScript>().GetSelection()); // <-- C'est ici que le changement de pouvoir est fait
+                
             }
 
             if (!(_timer <= _holdTimer) && _menuOpened == false)
@@ -38,21 +40,20 @@ namespace GodAvatar {
                 OpenMenu();
             }
 
-            
 
         }
         public void OpenMenu()
         {
-            _timer = 0;
             _menuOpened = true;
             _CircularMenu.SetActive(true);
+            _timer = 0;
         }
 
         public void CloseMenu()
         {
-            _timer = 0;
             _menuOpened = false;
             _CircularMenu.SetActive(false);
+            _timer = 0;
         }
     }
 }

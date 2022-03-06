@@ -176,6 +176,7 @@ MonoBehaviour:
   _normalizedMousePosition: {x: 0, y: 0}
   _currentAngle: 0
   _selection: 0
+  _beamScript: {fileID: 0}
   _MenuItems:
   - {fileID: 334553681}
   - {fileID: 697365036}
@@ -1594,7 +1595,6 @@ GameObject:
   - component: {fileID: 522898435}
   - component: {fileID: 522898436}
   - component: {fileID: 522898437}
-  - component: {fileID: 522898438}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1663,28 +1663,6 @@ MonoBehaviour:
     primary: 324
     alternate: 0
   _animator: {fileID: 0}
---- !u!114 &522898438
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 522898434}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d477e23351e0a84289fc8c6a7acbd9f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _health: 5
-  _numOfhearts: 5
-  hearts:
-  - {fileID: 1409367349}
-  - {fileID: 497819209}
-  - {fileID: 1735520195}
-  - {fileID: 73352394}
-  - {fileID: 660955703}
-  _heartFull: {fileID: 4606908045521496030, guid: ba97ea9a638dffe45875488faf9c9197, type: 3}
-  _heartEmpty: {fileID: -4195582761621981391, guid: ba97ea9a638dffe45875488faf9c9197, type: 3}
 --- !u!1 &546051691
 GameObject:
   m_ObjectHideFlags: 0
