@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5109821041019996377}
   - component: {fileID: 7823471407293986254}
   - component: {fileID: 4233479904409155959}
+  - component: {fileID: 1751608767043994868}
   m_Layer: 0
   m_Name: RayonLaser
   m_TagString: Untagged
@@ -61,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c56ee01824e1c014592b4594f5978e30, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -103,10 +104,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 729799758436300306}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bcbaf7cb548a5a94e8ff083fa2cfbe4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   FrontScale: {x: 0, y: 0, z: 0.1}
   explode: 0
+--- !u!114 &1751608767043994868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 729799758436300306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93fbf287403fce545b07234475c7e1b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
