@@ -29,6 +29,9 @@ namespace GodAvatar
 
     public class Comp_Playerinputs : MonoBehaviour
     {
+
+        public static Comp_Playerinputs _instance;
+
         public Input Forward;
         public Input Backward;
         public Input Right;
@@ -40,6 +43,10 @@ namespace GodAvatar
 
         private Quaternion _oldRotation;
 
+
+        private void Awake() {
+            _instance = this;
+        }
         private void Update()
         {
             _oldRotation = transform.rotation;

@@ -8,7 +8,7 @@ public class Burn_Damagable : MonoBehaviour
     //Zones Des Variables
     public GameObject Laser_ref;
     public GameObject ArmePlayer_ref;
-    public GameObject Artéphact_ref;
+    public GameObject Artephact_ref;
     public float HP;
     public float DamageParAttaque;
 
@@ -70,7 +70,7 @@ public class Burn_Damagable : MonoBehaviour
         Destroy(gameObject);
         if (gameObject.name == "Momie_Boss")
         {
-            Instantiate(Artéphact_ref);
+            Instantiate(Artephact_ref);
         }
     }
 }

@@ -6,7 +6,7 @@ using UnityEngine;
 public class GameState : MonoBehaviour
 {
 
-    private bool _pause;
+    private bool _pause = false;
     [SerializeField] private GameObject _pauseMenu;
 
     // Update is called once per frame
@@ -22,13 +22,13 @@ public class GameState : MonoBehaviour
     {
         if (_pause == false)
         {
-            Time.timeScale = 1f;
+            Time.timeScale = 0f;
             _pauseMenu.SetActive(true);
             _pause = true;
             return;
         }
 
-        Time.timeScale = 0f;
+        Time.timeScale = 1f;
         _pauseMenu.GetComponent<PauseMenuScript>().ShowMainSection();
         _pauseMenu.SetActive(false);
         _pause = false;

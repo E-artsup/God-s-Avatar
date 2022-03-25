@@ -2,22 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UseRayon : MonoBehaviour
-{
-    public Transform RayonLaser;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+namespace GodAvatar
+{
+    public class UseRayon : MonoBehaviour
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        [SerializeField] private Comp_Playerinputs _inputs;
+
+        public bool _beamSelected = true;
+
+        public Transform RayonLaser;
+        // Start is called before the first frame update
+        void Start()
         {
-            Instantiate(RayonLaser, gameObject.transform.position, Quaternion.identity, transform.parent);
-            //Instantiate(RayonLaser, transform.parent);
+
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+            if (_inputs.Power.PressedDown() && _beamSelected)
+            {
+                Instantiate(RayonLaser, gameObject.transform.position, transform.rotation, transform.parent);
+                //Instantiate(RayonLaser, transform.parent);
+            }
         }
     }
 }
+
