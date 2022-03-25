@@ -32,7 +32,7 @@ namespace GodAvatar
             {
                 for (int i = 0; i < _enemyInRange.Count; i++)
                 {
-                    if (Vector3.Distance(transform.position, _enemyInRange[i].transform.position) > (6.2f*transform.localScale.x/0.02f)) 
+                    if (Vector3.Distance(transform.position, _enemyInRange[i].transform.position) > (3.2f*transform.localScale.x/0.02f)) 
                     {
                         _enemyInRange[i].SetActive(true);
                         _vfxEnemy.SetVector3("EnemyPosition",_enemyInRange[i].transform.position);
