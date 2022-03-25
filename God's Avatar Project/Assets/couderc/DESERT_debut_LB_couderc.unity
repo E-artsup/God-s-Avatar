@@ -342,6 +342,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5850910701697499717, guid: b0304dedbe602f14faa8447b541ea7d6, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 891acaa94d044284f9fb272030a7a962, type: 2}
     - target: {fileID: 919132149155446097, guid: b0304dedbe602f14faa8447b541ea7d6, type: 3}
       propertyPath: m_Name
       value: Desert_Palmier_2 (1)
@@ -957,6 +961,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Muret_1
       objectReference: {fileID: 0}
+    - target: {fileID: 4966870193319915966, guid: ebc8618e4a89de84d81315e810077366, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: caf9e74a0eaddc543b3d860d8309c04a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebc8618e4a89de84d81315e810077366, type: 3}
 --- !u!1001 &1121551003
